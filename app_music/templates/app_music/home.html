@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content%}
+{% for album in albums %}
+  {% include 'snippets/card-sample.html' %}
+{% endfor %}
+{% endblock %}

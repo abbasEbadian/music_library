@@ -1,0 +1,23 @@
+
+{% load thumbnail %}
+<div class="container col s3 hoverable" style="padding:0px;">
+
+  <div class="card grey lighten-3">
+    <div class="card-image">
+      {% thumbnail album.avatar "230x230" crop="center" as im %}
+      <img class="album-cover" src="{{im.url}}" width="{{im.width}}" height="{{im.height}}"/>
+      {% endthumbnail%}
+
+    </div>
+    <div class="center">
+      <span class="card-title">{{album.title}}</span>
+    </div>
+    <div class="card-content center">
+      {{album.short_description}}
+      <br>
+      <a href="{% url 'app_music:album_detail' album.id %}">Details</a>
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,26 @@
+{% load thumbnail %}
+{% load my_tags %}
+<div class="row">
+  <div class="col s4">
+    {% thumbnail album.avatar "230x230" crop="center" as im %}
+    <img class="album-cover" alt="album_cover" src="{{im.url}}" width="{{im.width}}" height="{{im.height}}"/>
+    {% endthumbnail%}
+
+    <br><br>
+    {% for tag in tags %}
+      {{tag.title}}
+      {% if not forloop.last %}
+      ,
+      {% endif %}
+    {% endfor%}
+  </div>
+  <div class="col s8">
+    <span  class="album-title">{{album.title}}</span><br>
+    <span>by <bold>{{album.artist.name}}</bold></span><br>
+    <span>{{album.rate}}/5</span><br><br>
+    <span>{{album.release_date|format_date}}</span><br><br>
+    <span>{{ tracks_count}} Tracks</span>
+
+  </div>
+
+</div>

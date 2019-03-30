@@ -1,0 +1,11 @@
+@font-face {
+  font-family: mfont;
+  src:url("{% static 'fonts/mfont/Ginga.ttf'%}");
+}
+.album-cover{
+  border-radius: 5px;
+}
+.album-title{
+  font-size: 23px !important;
+
+}
