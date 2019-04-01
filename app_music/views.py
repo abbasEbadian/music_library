@@ -1,10 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . import models
+from accounts import views as ac_views
+from django.contrib import messages
 # Create your views here.
 
-def home(request):
+def home(request,**kwargs):
     context ={
-        'albums' : models.Album.objects.all()
+        'albums' : models.Album.objects.all(),
+        **kwargs,
+        'hello' : 1,
         }
     return render(request, 'app_music/home.html',context)
 
@@ -16,3 +20,7 @@ def album_detail(request, album_id):
         'tags':album.tags.all()
         }
     return render(request, 'app_music/album_detail.html', context)
+
+
+def to_albums(request):
+    return redirect('app_music:home')

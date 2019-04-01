@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app_music',
     'sorl.thumbnail',
+    'accounts',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +125,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+LOGIN_REDIRECT_URL='app_music:home'
+LOGIN_URL='app_music:login'
+#LOGOUT_REDIRECT_URL='app_music/home.html'
+CRISPY_TEMPLATE_PACK ='bootstrap4'

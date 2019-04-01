@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Logged out </h2>
+<hr><hr>
+<div class="border-top pt-3">
+  <small class="text-muted">
+    Go to Home Page <a class="ml-2" href="{% url 'app_music:home' %}"> Home</a>
+  </small><hr>
+  <small class="text-muted  ">
+    Login again <a class="ml-2" href="{% url 'app_music:login' %}"> Sign in</a>
+  </small>
+</div>
+
+{% endblock %}
